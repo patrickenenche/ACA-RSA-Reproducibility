@@ -1,0 +1,12 @@
+scheme,sensitivity_id,sweep_membership,K_max,M_path,M_req,bounds_apply
+fsa_rsa_ssfm,fsa_control,control,3,3,6,0
+aca_rsa,K1_MP3_MR6,K_max,1,3,6,1
+aca_rsa,K2_MP3_MR6,K_max,2,3,6,1
+aca_rsa,K3_MP3_MR6,K_max|M_path|M_req,3,3,6,1
+aca_rsa,K4_MP3_MR6,K_max,4,3,6,1
+aca_rsa,K3_MP1_MR6,M_path,3,1,6,1
+aca_rsa,K3_MP2_MR6,M_path,3,2,6,1
+aca_rsa,K3_MP4_MR6,M_path,3,4,6,1
+aca_rsa,K3_MP3_MR2,M_req,3,3,2,1
+aca_rsa,K3_MP3_MR4,M_req,3,3,4,1
+aca_rsa,K3_MP3_MR8,M_req,3,3,8,1

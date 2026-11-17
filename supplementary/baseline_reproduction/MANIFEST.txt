@@ -1,0 +1,15 @@
+README.md
+SOURCE_NOTES.md
+requirements.txt
+MANIFEST.txt
+CHECKSUMS.sha256
+analysis/reproduce_baseline_validation.py
+data/v31_baseline_summary_subset.csv
+generated/baseline_low_load_validation.csv
+generated/baseline_table5_comparison.csv
+generated/validation_summary.txt
+manuscript_insertion/baseline_reproduction_main_text.tex
+manuscript_insertion/optional_main_low_load_table.tex
+supplementary/ACA_RSA_Supplementary_Baseline_Reproduction.tex
+supplementary/ACA_RSA_Supplementary_Baseline_Reproduction.pdf
+

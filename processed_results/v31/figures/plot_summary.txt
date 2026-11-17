@@ -1,0 +1,27 @@
+Plot summary
+========================================================================
+Summary CSV: processed_results/v31/simulation_results_summary.csv
+CI handling: uses precomputed *_ci95 columns from the simulator summary CSV.
+
+Topologies: GERMAN, TI, USNET
+Schemes: aca_rsa, adaptive_mp_ss_rsa, fsa_rsa_ssfm, k1_rsa, k3_rsa, mp_ss_rsa, p_aca_rsa, rb_scsp_arsa
+Loads: 5, 10, 15, 20, 25
+
+Metrics plotted:
+  - RBP_mean with RBP_ci95
+  - BBP_mean with BBP_ci95
+  - throughput_mean with throughput_ci95
+  - accepted_load_mean with accepted_load_ci95
+  - FSU_mean with FSU_ci95
+  - avg_LFM_mean with avg_LFM_ci95
+  - avg_EBFM_mean with avg_EBFM_ci95
+  - avg_K_mean with avg_K_ci95
+  - avg_r_over_g_mean with avg_r_over_g_ci95
+  - actual_aggregate_accepted_load_erlangs_mean with actual_aggregate_accepted_load_erlangs_ci95
+  - mean_active_carried_gbps_mean with mean_active_carried_gbps_ci95
+  - mean_allocated_slot_hops_per_accepted_request_mean with mean_allocated_slot_hops_per_accepted_request_ci95
+  - slot_hops_per_accepted_gbps_mean with slot_hops_per_accepted_gbps_ci95
+  - carried_gbps_per_occupied_slot_hop_mean with carried_gbps_per_occupied_slot_hop_ci95
+  - occupied_slot_hops_per_carried_gbps_mean with occupied_slot_hops_per_carried_gbps_ci95
+  - mean_decision_time_us_mean with mean_decision_time_us_ci95
+  - p95_decision_time_us_mean with p95_decision_time_us_ci95

@@ -1,0 +1,7 @@
+Baseline reproduction summary
+=============================
+Input: supplementary/baseline_reproduction/data/v31_baseline_summary_subset.csv
+Rows validated: 45
+Source-style calculation: mean of five load-specific signed changes
+Maximum K1 published/reproduced difference: 1.33 percentage points
+Expected manuscript statement: at most 1.33 percentage points

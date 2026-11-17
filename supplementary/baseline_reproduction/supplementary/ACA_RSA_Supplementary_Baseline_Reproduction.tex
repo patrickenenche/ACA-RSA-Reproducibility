@@ -1,0 +1,210 @@
+\documentclass[letterpaper,journal]{IEEEtran}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{url}
+
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thealgorithm}{S\arabic{algorithm}}
+
+\begin{document}
+
+\title{Supplementary Material: Baseline Reproduction and Implementation Scope}
+\author{Patrick Enenche and Hyowon Kim}
+\maketitle
+
+\section{Purpose and Scope}
+
+This supplement documents the reproduction checks and implementation scope of
+the K1-RSA, K3-RSA, and FSA-RSA(SSFM) baselines used in the accompanying
+manuscript. The published values are taken from Tables~IV and~V of
+Srivastava and Singh~\cite{Srivastava2025SSFM}; the reproduced values are
+ten-seed means from the principal simulation data.
+
+The reference study expresses traffic as an average per-node load, whereas
+our simulator generates one network-wide request stream. Its Table~IV was
+therefore used as the low-load reproduction check when fixing the
+topology-specific load mappings. These mappings were then held constant for
+every scheme and nominal load index.
+
+\section{Low-Load Reproduction Check}
+
+Table~\ref{tab:supp_low_load} reports the published and reproduced request
+blocking probabilities at the lowest operating point. The reproduced
+FSA-RSA(SSFM) values preserve the near-zero blocking regime of the reference
+study.
+
+\begin{table*}[t]
+\centering
+\caption{Published/reproduced low-load request blocking probability.}
+\label{tab:supp_low_load}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Scheme} & \textbf{German} & \textbf{USNET} & \textbf{TI} \\
+\midrule
+K1-RSA
+& \(4.20{\times}10^{-4}/4.80{\times}10^{-4}\)
+& \(7.70{\times}10^{-4}/7.34{\times}10^{-4}\)
+& \(5.00{\times}10^{-2}/4.38{\times}10^{-2}\) \\
+K3-RSA
+& \(1.50{\times}10^{-4}/1.99{\times}10^{-4}\)
+& \(1.90{\times}10^{-4}/3.32{\times}10^{-4}\)
+& \(6.00{\times}10^{-3}/2.60{\times}10^{-2}\) \\
+FSA-RSA(SSFM)
+& \(0/0\)
+& \(0/0\)
+& \(6.50{\times}10^{-4}/3.46{\times}10^{-4}\) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Multi-Load Source-Style Comparison}
+
+For the sole purpose of reproducing the presentation of Table~V in the
+reference study, let \(\beta\in\{\mathrm{K1},\mathrm{K3}\}\) denote a
+baseline, \(T\) a topology, and \(\mathcal{Q}\) a metric. Let
+\(\mathcal{Q}_{\mathrm{SSFM},T}(\rho)\) and
+\(\mathcal{Q}_{\beta,T}(\rho)\) denote the corresponding seed-averaged
+values at nominal load index \(\rho\). Because the reference study does
+not state the Table~V aggregation formula explicitly, we use the following
+source-style signed change and report the calculation transparently:
+\begin{equation}
+\delta_{\mathcal{Q}}^{\mathrm{src}}(\beta,T)
+=
+20
+\sum_{\rho\in\{5,10,15,20,25\}}
+\frac{
+\mathcal{Q}_{\mathrm{SSFM},T}(\rho)
+-
+\mathcal{Q}_{\beta,T}(\rho)
+}{
+\mathcal{Q}_{\beta,T}(\rho)
+}.
+\label{eq:supp_source_style_change}
+\end{equation}
+Negative request-blocking values indicate lower blocking under
+FSA-RSA(SSFM), whereas positive frequency-slot-utilization and throughput
+values indicate increases. Equation~\eqref{eq:supp_source_style_change} is
+used only for comparison with the reference table. The principal ACA-RSA
+analysis instead computes relative changes between load-averaged metric
+values, thereby avoiding undefined load-specific ratios when blocking is
+zero.
+
+\begin{table*}[t]
+\centering
+\caption{Published/reproduced signed percentage changes for FSA-RSA(SSFM)
+relative to K1-RSA and K3-RSA. The source-study LFM corresponds to the FDM
+reported in our simulator.}
+\label{tab:supp_table5}
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llrrrr}
+\toprule
+\textbf{Topology} & \textbf{Baseline} &
+\textbf{RBP} & \textbf{FSU} & \textbf{LFM/FDM} & \textbf{Throughput} \\
+\midrule
+German & K1-RSA & \(-48.30/-47.23\) & \(3.00/2.83\)
+& \(5.10/4.78\) & \(4.30/4.25\) \\
+German & K3-RSA & \(-31.70/-29.93\) & \(-3.90/-3.91\)
+& \(-1.20/-1.26\) & \(0.30/0.04\) \\
+USNET & K1-RSA & \(-52.70/-53.08\) & \(6.10/6.35\)
+& \(8.20/7.90\) & \(5.40/5.49\) \\
+USNET & K3-RSA & \(-33.10/-36.56\) & \(-2.00/-0.24\)
+& \(0.47/2.19\) & \(0.40/0.55\) \\
+TI & K1-RSA & \(-50.00/-51.33\) & \(14.00/13.60\)
+& \(11.70/10.56\) & \(17.20/17.14\) \\
+TI & K3-RSA & \(-25.00/-39.69\) & \(-5.00/2.97\)
+& \(-4.70/2.16\) & \(2.20/7.18\) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+For K1-RSA, all twelve topology--metric differences are within
+\(1.33\) percentage points of the published values. The K3-RSA differences
+are larger for TI. The reference study describes K3-RSA as a fixed-route
+scheme but does not specify how the three routes are generated or ordered.
+Our implementation is therefore documented below and treated as a
+common-simulator implementation rather than an exact reproduction.
+
+\section{Baseline Procedures}
+
+\begin{algorithm}[t]
+\caption{Implemented K1-RSA}
+\label{alg:supp_k1}
+\begin{algorithmic}[1]
+\Require Request \(R_i=(s_i,d_i,g_i)\); precomputed shortest
+physical-distance path \(p_{s_i,d_i}^{(1)}\)
+\State Apply First-Fit to find \(g_i\) contiguous common-free slots on
+\(p_{s_i,d_i}^{(1)}\)
+\If{a block is available}
+    \State Allocate the block and accept \(R_i\)
+\Else
+    \State Block \(R_i\)
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[t]
+\caption{Implemented K3-RSA}
+\label{alg:supp_k3}
+\begin{algorithmic}[1]
+\Require Request \(R_i=(s_i,d_i,g_i)\); three precomputed shortest
+physical-distance paths \(p_{s_i,d_i}^{(1)},p_{s_i,d_i}^{(2)},
+p_{s_i,d_i}^{(3)}\)
+\For{\(k=1,2,3\) in increasing path-cost order}
+    \State Apply First-Fit to find \(g_i\) contiguous common-free slots on
+    \(p_{s_i,d_i}^{(k)}\)
+    \If{a block is available}
+        \State Allocate the block, accept \(R_i\), and stop
+    \EndIf
+\EndFor
+\State Block \(R_i\) if all three attempts fail
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[t]
+\caption{Implemented FSA-RSA(SSFM)}
+\label{alg:supp_ssfm}
+\begin{algorithmic}[1]
+\Require Request \(R_i=(s_i,d_i,g_i)\); current link-slot state
+\For{each directed link \(e\)}
+    \State Compute the current SSFM value and set
+    \(\omega_e=1+\mathrm{SSFM}_e\)
+\EndFor
+\State Compute one minimum-weight path \(p_i\) using Dijkstra's algorithm
+\State Apply First-Fit to find \(g_i\) contiguous common-free slots on
+\(p_i\)
+\If{a block is available}
+    \State Allocate the block and accept \(R_i\)
+\Else
+    \State Block \(R_i\)
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+All three schemes use the same event engine, request realizations, spectrum
+state, and First-Fit implementation. K1-RSA and K3-RSA use route tables fixed
+before event processing, whereas FSA-RSA(SSFM) recomputes its link weights and
+route at each arrival.
+
+\section{Reproducibility Files}
+
+The accompanying package includes the processed v31 data subset and a
+standard-library Python script that regenerates Tables~\ref{tab:supp_low_load}
+and~\ref{tab:supp_table5}. The source-study PDF is not redistributed.
+
+\begin{thebibliography}{1}
+\bibitem{Srivastava2025SSFM}
+R. Srivastava and Y. N. Singh, ``A novel fragmentation metric and
+fragmentation-aware adaptive routing and spectrum allocation algorithm in
+elastic optical network,'' \emph{Optical Fiber Technology}, vol.~94,
+Art.~no.~104318, 2025.
+\end{thebibliography}
+
+\end{document}
+

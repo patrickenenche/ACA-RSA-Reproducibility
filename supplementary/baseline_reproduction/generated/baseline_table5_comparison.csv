@@ -1,0 +1,7 @@
+topology,baseline,published_RBP,reproduced_RBP,difference_pp_RBP,published_FSU,reproduced_FSU,difference_pp_FSU,published_LFM_FDM,reproduced_LFM_FDM,difference_pp_LFM_FDM,published_Throughput,reproduced_Throughput,difference_pp_Throughput
+GERMAN,K1-RSA,-48.30,-47.23,1.07,3.00,2.83,-0.17,5.10,4.78,-0.32,4.30,4.25,-0.05
+GERMAN,K3-RSA,-31.70,-29.93,1.77,-3.90,-3.91,-0.01,-1.20,-1.26,-0.06,0.30,0.04,-0.26
+USNET,K1-RSA,-52.70,-53.08,-0.38,6.10,6.35,0.25,8.20,7.90,-0.30,5.40,5.49,0.09
+USNET,K3-RSA,-33.10,-36.56,-3.46,-2.00,-0.24,1.76,0.47,2.19,1.72,0.40,0.55,0.15
+TI,K1-RSA,-50.00,-51.33,-1.33,14.00,13.60,-0.40,11.70,10.56,-1.14,17.20,17.14,-0.06
+TI,K3-RSA,-25.00,-39.69,-14.69,-5.00,2.97,7.97,-4.70,2.16,6.86,2.20,7.18,4.98

@@ -1,0 +1,17 @@
+ACA-RSA v34 traffic-distribution sensitivity validation
+
+Raw run matrix: 810/810 rows complete.
+Summary matrix: 81/81 rows complete.
+Complete traffic-trace pairing: 270 groups verified.
+Cross-profile non-demand pairing: 90 groups verified.
+
+RBP: ACA-RSA versus FSA-RSA(SSFM) -- 27/27 positive paired reductions; 27/27 Holm-significant; maximum adjusted p=1.13675e-05.
+BBP: ACA-RSA versus FSA-RSA(SSFM) -- 27/27 positive paired reductions; 27/27 Holm-significant; maximum adjusted p=1.13675e-05.
+RBP: ACA-RSA versus MP-SS-RSA -- 27/27 positive paired reductions; 27/27 Holm-significant; maximum adjusted p=0.000620638.
+BBP: ACA-RSA versus MP-SS-RSA -- 27/27 positive paired reductions; 27/27 Holm-significant; maximum adjusted p=0.000362281.
+
+Compact rho=25 reporting values (topology-averaged):
+traffic_profile_id traffic_profile  mean_slots  variance_slots2  aca_rbp_mean_pct  aca_bbp_mean_pct  fallback_success_mean_pct  fallback_success_std_pct  fallback_success_ci95_pct  rbp_reduction_vs_fsa_pct  bbp_reduction_vs_fsa_pct  rbp_reduction_vs_mp_ss_pct  bbp_reduction_vs_mp_ss_pct  aca_slot_hops_per_accepted_gbps  aca_mean_decision_time_ms
+       constant_10     Constant 10   10.000000         0.000000         18.280900         18.280900                  45.638787                  7.176612                   2.679791                 19.807014                 19.807014                   31.538620                   31.538620                         0.223143                   5.897109
+      uniform_4_16   Uniform 4--16   10.000000        14.000000         16.765967         20.565707                  74.845353                  5.014306                   1.872372                 34.042288                 33.424073                   27.422257                   31.251749                         0.222438                   8.135485
+      bimodal_4_16    Bimodal 4/16   10.000000        36.000000         14.501500         19.989375                  66.358790                  6.008312                   2.243541                 26.240681                 34.407202                   23.778479                   34.284104                         0.222679                   6.404507

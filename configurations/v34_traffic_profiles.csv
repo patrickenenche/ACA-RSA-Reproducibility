@@ -1,0 +1,10 @@
+scheme,traffic_profile_id,description,sampling_mode,slot_values,probabilities,mean_slots,variance_slots2,K_max,M_path,M_req,bounds_apply
+fsa_rsa_ssfm,uniform_4_16,discrete uniform slot demand over integers 4 through 16,slot_uniform,4|5|6|7|8|9|10|11|12|13|14|15|16,0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231,10.0,14.0,3,3,6,0
+mp_ss_rsa,uniform_4_16,discrete uniform slot demand over integers 4 through 16,slot_uniform,4|5|6|7|8|9|10|11|12|13|14|15|16,0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231,10.0,14.0,3,3,6,1
+aca_rsa,uniform_4_16,discrete uniform slot demand over integers 4 through 16,slot_uniform,4|5|6|7|8|9|10|11|12|13|14|15|16,0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231|0.0769230769231,10.0,14.0,3,3,6,1
+fsa_rsa_ssfm,constant_10,constant 10-slot demand,slot_constant,10,1,10.0,0.0,3,3,6,0
+mp_ss_rsa,constant_10,constant 10-slot demand,slot_constant,10,1,10.0,0.0,3,3,6,1
+aca_rsa,constant_10,constant 10-slot demand,slot_constant,10,1,10.0,0.0,3,3,6,1
+fsa_rsa_ssfm,bimodal_4_16,equal-probability bimodal demand at 4 and 16 slots,slot_bimodal,4|16,0.5|0.5,10.0,36.0,3,3,6,0
+mp_ss_rsa,bimodal_4_16,equal-probability bimodal demand at 4 and 16 slots,slot_bimodal,4|16,0.5|0.5,10.0,36.0,3,3,6,1
+aca_rsa,bimodal_4_16,equal-probability bimodal demand at 4 and 16 slots,slot_bimodal,4|16,0.5|0.5,10.0,36.0,3,3,6,1

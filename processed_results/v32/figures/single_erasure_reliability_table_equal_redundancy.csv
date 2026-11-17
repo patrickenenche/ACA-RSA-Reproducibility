@@ -1,0 +1,4 @@
+Topology,ACA setup RBP r_i=0 (%),ACA setup RBP r_i=1 (%),A-MP-SS-RSA-Repetition setup RBP r_i=1 (%),Relative admission cost (%),Post-erasure DFP A-MP-SS-RSA-Repetition (%),Post-erasure DFP ACA-RSA r_i=1 (%),E2EFP A-MP-SS-RSA-Repetition (%),E2EFP ACA-RSA r_i=1 (%)
+USNET,4.25,5.98,5.98,40.64,78.81,0.00,80.10,5.98
+GERMAN,4.70,6.52,6.52,38.62,78.79,0.00,80.20,6.52
+TI,9.96,12.35,12.35,23.98,78.53,0.00,81.23,12.35

@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering
+\caption{Mean-matched traffic-distribution sensitivity at $\rho=25$, averaged across the German, USNET, and TI topologies. All profiles have a mean demand of ten slots. Positive reductions indicate lower blocking under \acs{aca}; slot-hop cost and decision time are likewise topology-averaged.}
+\label{tab:traffic_distribution_sensitivity}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Traffic profile} & \textbf{Variance} & \textbf{\acs{aca} \acs{rbp} (\%)} & \textbf{\acs{aca} \acs{bbp} (\%)} & \textbf{Fallback success (\%)} & \textbf{\acs{rbp} red. vs. \acs{fsa}(\acs{ssfm}) (\%)} & \textbf{\acs{bbp} red. vs. \acs{fsa}(\acs{ssfm}) (\%)} & \textbf{\acs{rbp} red. vs. \acs{mpss} (\%)} & \textbf{Slot-hops/accepted Gbps} & \textbf{Decision time (ms)} \\
+\midrule
+Constant 10 & 0 & 18.28 & 18.28 & 45.64 & 19.81 & 19.81 & 31.54 & 0.2231 & 5.90 \\
+Uniform 4--16 & 14 & 16.77 & 20.57 & 74.85 & 34.04 & 33.42 & 27.42 & 0.2224 & 8.14 \\
+Bimodal 4/16 & 36 & 14.50 & 19.99 & 66.36 & 26.24 & 34.41 & 23.78 & 0.2227 & 6.40 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

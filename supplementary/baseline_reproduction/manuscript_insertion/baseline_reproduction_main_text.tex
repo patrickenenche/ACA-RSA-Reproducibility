@@ -1,0 +1,29 @@
+\subsubsection{Baseline Reproduction and Implementation Scope}
+\label{subsubsec:baseline_reproduction}
+
+The reference study models traffic as an average per-node load, whereas
+our simulator generates one network-wide request stream. Its Table~IV
+was therefore used as the low-load reproduction check when fixing the
+topology-specific load mappings, which were then held constant across
+all schemes and loads. Supplementary Table~S1 compares the published
+values with our reproduced ten-seed means.
+
+As a secondary multi-load check, Supplementary Table~S2 compares the
+published values in Table~V of the reference study with our reproduced
+values. Because the reference study does not state its aggregation formula,
+this source-style check transparently averages the five load-specific signed
+percentage changes. This calculation is distinct from
+Eqs.~\eqref{eq:load_averaged_metric}--%
+\eqref{eq:load_averaged_fsu_change}, which first average the metric
+values over \(\rho\) and are used for the principal \acs{aca}
+comparisons. For K1-RSA, all twelve topology--metric differences are
+within \(1.33\) percentage points of the published values.
+
+The reference study does not specify how its three fixed K3-RSA routes
+are generated or ordered. Our implementation precomputes the three
+shortest physical-distance paths and attempts them sequentially using
+First-Fit. Because this choice cannot be matched unambiguously, K3-RSA
+is treated as a documented common-simulator implementation rather than
+an exact reproduction. Its larger TI differences are disclosed in the
+supplement and it is excluded from mechanism-attribution claims.
+

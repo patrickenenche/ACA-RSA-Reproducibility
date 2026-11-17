@@ -1,0 +1,861 @@
+{
+  "configuration": {
+    "adaptive_fragment_allocator": "shared_by_adaptive_mp_ss_rsa_and_aca_rsa",
+    "adaptive_mp_ss_semantics": "adaptive_uncoded_subdemands_r0_admission_equivalent_to_aca",
+    "aggregate_offered_load_definition": "nominal_load_index_times_topology_load_scale",
+    "bandwidth_max_gbps": 200,
+    "bandwidth_min_gbps": 50,
+    "bandwidth_sampling_mode": "slot_uniform",
+    "bpsk_m": 1,
+    "carried_efficiency_definition": "mean_active_carried_gbps_divided_by_mean_occupied_slot_hops",
+    "carried_traffic_definition": "mean_sum_active_accepted_request_gbps_at_post_arrival_snapshots",
+    "decision_time_scope": "route_and_spectrum_decision_only_perf_counter_ns",
+    "experiment_tag": "ACA_RSA_v33_sens_K1-4_MP1-4_MR2-4-6-8_full_100000req_10seeds",
+    "fallback_debug_policy": "one_row_per_steady_state_fallback_invocation",
+    "fallback_segment_order": "width_descending_then_slot_index_ascending",
+    "load_scale": 9,
+    "load_scale_by_topology": {
+      "GERMAN": 9,
+      "TI": 15,
+      "USNET": 12.43
+    },
+    "load_values": [
+      10,
+      20,
+      25
+    ],
+    "main_redundancy_r": 0,
+    "mp_ss_fallback_allocator": "deterministic_sequential_greedy_no_backtracking",
+    "mp_ss_k_max": 3,
+    "mp_ss_max_parts": 6,
+    "n_requests": 100000,
+    "physical_layer_scope": "rsa_only_no_qot_reach_guard_band_transponder_delay_or_control_plane_model",
+    "rb_scsp_implementation": "repair_oriented_proxy",
+    "rb_scsp_max_repairs": 3,
+    "reference_bounds": {
+      "k_max": 3,
+      "max_segments_per_path": 3,
+      "max_segments_per_request": 6
+    },
+    "run_profile": "full",
+    "schemes": [
+      "fsa_rsa_ssfm",
+      "aca_rsa"
+    ],
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "sensitivity_configurations": [
+      {
+        "K_max": 3,
+        "M_path": 3,
+        "M_req": 6,
+        "bounds_apply": 0,
+        "scheme": "fsa_rsa_ssfm",
+        "sensitivity_id": "fsa_control",
+        "sweep_membership": "control"
+      },
+      {
+        "K_max": 1,
+        "M_path": 3,
+        "M_req": 6,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K1_MP3_MR6",
+        "sweep_membership": "K_max"
+      },
+      {
+        "K_max": 2,
+        "M_path": 3,
+        "M_req": 6,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K2_MP3_MR6",
+        "sweep_membership": "K_max"
+      },
+      {
+        "K_max": 3,
+        "M_path": 3,
+        "M_req": 6,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K3_MP3_MR6",
+        "sweep_membership": "K_max|M_path|M_req"
+      },
+      {
+        "K_max": 4,
+        "M_path": 3,
+        "M_req": 6,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K4_MP3_MR6",
+        "sweep_membership": "K_max"
+      },
+      {
+        "K_max": 3,
+        "M_path": 1,
+        "M_req": 6,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K3_MP1_MR6",
+        "sweep_membership": "M_path"
+      },
+      {
+        "K_max": 3,
+        "M_path": 2,
+        "M_req": 6,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K3_MP2_MR6",
+        "sweep_membership": "M_path"
+      },
+      {
+        "K_max": 3,
+        "M_path": 4,
+        "M_req": 6,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K3_MP4_MR6",
+        "sweep_membership": "M_path"
+      },
+      {
+        "K_max": 3,
+        "M_path": 3,
+        "M_req": 2,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K3_MP3_MR2",
+        "sweep_membership": "M_req"
+      },
+      {
+        "K_max": 3,
+        "M_path": 3,
+        "M_req": 4,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K3_MP3_MR4",
+        "sweep_membership": "M_req"
+      },
+      {
+        "K_max": 3,
+        "M_path": 3,
+        "M_req": 8,
+        "bounds_apply": 1,
+        "scheme": "aca_rsa",
+        "sensitivity_id": "K3_MP3_MR8",
+        "sweep_membership": "M_req"
+      }
+    ],
+    "sensitivity_design": "one_factor_at_a_time_with_deduplicated_reference",
+    "service_rate": 1.0,
+    "slot_granularity_ghz": 12.5,
+    "slot_hop_cost_definition": "sum_allocated_segment_width_times_path_hops",
+    "snapshot_policy": "post_arrival_only",
+    "source_sha256": "228c8a4cf575915d4be3cc7320d9919a7969cd3b34af759a8cce03b647d7fb2c",
+    "spectrum_bandwidth_ghz": 4000,
+    "topologies": [
+      "GERMAN",
+      "USNET",
+      "TI"
+    ],
+    "topology_signatures": {
+      "GERMAN": {
+        "edges": [
+          [
+            1,
+            2,
+            144.0
+          ],
+          [
+            1,
+            3,
+            278.0
+          ],
+          [
+            2,
+            4,
+            114.0
+          ],
+          [
+            2,
+            6,
+            120.0
+          ],
+          [
+            3,
+            5,
+            37.0
+          ],
+          [
+            3,
+            6,
+            208.0
+          ],
+          [
+            3,
+            9,
+            88.0
+          ],
+          [
+            4,
+            6,
+            157.0
+          ],
+          [
+            4,
+            8,
+            306.0
+          ],
+          [
+            5,
+            7,
+            36.0
+          ],
+          [
+            6,
+            8,
+            298.0
+          ],
+          [
+            6,
+            10,
+            258.0
+          ],
+          [
+            6,
+            11,
+            316.0
+          ],
+          [
+            7,
+            9,
+            41.0
+          ],
+          [
+            8,
+            10,
+            174.0
+          ],
+          [
+            9,
+            11,
+            182.0
+          ],
+          [
+            10,
+            11,
+            353.0
+          ],
+          [
+            10,
+            12,
+            275.0
+          ],
+          [
+            11,
+            12,
+            224.0
+          ],
+          [
+            11,
+            13,
+            85.0
+          ],
+          [
+            12,
+            14,
+            179.0
+          ],
+          [
+            12,
+            17,
+            187.0
+          ],
+          [
+            13,
+            15,
+            64.0
+          ],
+          [
+            14,
+            16,
+            143.0
+          ],
+          [
+            15,
+            17,
+            74.0
+          ],
+          [
+            16,
+            17,
+            86.0
+          ]
+        ],
+        "nodes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      },
+      "TI": {
+        "edges": [
+          [
+            1,
+            10,
+            113.0
+          ],
+          [
+            1,
+            12,
+            160.0
+          ],
+          [
+            1,
+            14,
+            306.0
+          ],
+          [
+            1,
+            28,
+            118.0
+          ],
+          [
+            2,
+            19,
+            178.0
+          ],
+          [
+            2,
+            20,
+            162.0
+          ],
+          [
+            2,
+            22,
+            107.0
+          ],
+          [
+            3,
+            16,
+            489.0
+          ],
+          [
+            3,
+            20,
+            289.0
+          ],
+          [
+            3,
+            27,
+            105.0
+          ],
+          [
+            4,
+            9,
+            101.0
+          ],
+          [
+            4,
+            14,
+            41.0
+          ],
+          [
+            4,
+            17,
+            127.0
+          ],
+          [
+            4,
+            22,
+            181.0
+          ],
+          [
+            5,
+            25,
+            168.0
+          ],
+          [
+            5,
+            29,
+            424.0
+          ],
+          [
+            6,
+            21,
+            1052.0
+          ],
+          [
+            6,
+            24,
+            674.0
+          ],
+          [
+            7,
+            8,
+            306.0
+          ],
+          [
+            7,
+            11,
+            265.0
+          ],
+          [
+            7,
+            18,
+            238.0
+          ],
+          [
+            8,
+            11,
+            45.0
+          ],
+          [
+            8,
+            27,
+            331.0
+          ],
+          [
+            9,
+            19,
+            197.0
+          ],
+          [
+            9,
+            21,
+            109.0
+          ],
+          [
+            9,
+            23,
+            310.0
+          ],
+          [
+            10,
+            14,
+            370.0
+          ],
+          [
+            10,
+            21,
+            121.0
+          ],
+          [
+            10,
+            26,
+            32.0
+          ],
+          [
+            11,
+            15,
+            427.0
+          ],
+          [
+            11,
+            16,
+            432.0
+          ],
+          [
+            11,
+            18,
+            438.0
+          ],
+          [
+            12,
+            13,
+            33.0
+          ],
+          [
+            12,
+            28,
+            210.0
+          ],
+          [
+            13,
+            14,
+            239.0
+          ],
+          [
+            13,
+            25,
+            183.0
+          ],
+          [
+            14,
+            21,
+            155.0
+          ],
+          [
+            14,
+            25,
+            123.0
+          ],
+          [
+            15,
+            16,
+            37.0
+          ],
+          [
+            15,
+            24,
+            252.0
+          ],
+          [
+            16,
+            23,
+            247.0
+          ],
+          [
+            17,
+            25,
+            86.0
+          ],
+          [
+            17,
+            30,
+            38.0
+          ],
+          [
+            19,
+            23,
+            246.0
+          ],
+          [
+            20,
+            23,
+            255.0
+          ],
+          [
+            21,
+            24,
+            472.0
+          ],
+          [
+            22,
+            30,
+            357.0
+          ],
+          [
+            23,
+            24,
+            24.0
+          ],
+          [
+            26,
+            28,
+            179.0
+          ],
+          [
+            29,
+            30,
+            196.0
+          ]
+        ],
+        "nodes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      "USNET": {
+        "edges": [
+          [
+            1,
+            2,
+            800.0
+          ],
+          [
+            1,
+            3,
+            1000.0
+          ],
+          [
+            2,
+            3,
+            950.0
+          ],
+          [
+            2,
+            4,
+            1000.0
+          ],
+          [
+            3,
+            5,
+            1000.0
+          ],
+          [
+            3,
+            9,
+            1200.0
+          ],
+          [
+            3,
+            11,
+            1900.0
+          ],
+          [
+            4,
+            5,
+            1000.0
+          ],
+          [
+            4,
+            6,
+            250.0
+          ],
+          [
+            4,
+            7,
+            800.0
+          ],
+          [
+            5,
+            6,
+            850.0
+          ],
+          [
+            5,
+            8,
+            1150.0
+          ],
+          [
+            5,
+            9,
+            1000.0
+          ],
+          [
+            6,
+            7,
+            800.0
+          ],
+          [
+            7,
+            8,
+            1200.0
+          ],
+          [
+            8,
+            23,
+            900.0
+          ],
+          [
+            9,
+            10,
+            1000.0
+          ],
+          [
+            9,
+            11,
+            1400.0
+          ],
+          [
+            9,
+            23,
+            1000.0
+          ],
+          [
+            10,
+            11,
+            900.0
+          ],
+          [
+            10,
+            13,
+            1000.0
+          ],
+          [
+            10,
+            22,
+            900.0
+          ],
+          [
+            11,
+            12,
+            1300.0
+          ],
+          [
+            11,
+            14,
+            2600.0
+          ],
+          [
+            12,
+            13,
+            600.0
+          ],
+          [
+            12,
+            15,
+            1300.0
+          ],
+          [
+            13,
+            16,
+            1000.0
+          ],
+          [
+            13,
+            17,
+            800.0
+          ],
+          [
+            13,
+            19,
+            1000.0
+          ],
+          [
+            14,
+            15,
+            1200.0
+          ],
+          [
+            15,
+            16,
+            700.0
+          ],
+          [
+            16,
+            17,
+            300.0
+          ],
+          [
+            17,
+            18,
+            600.0
+          ],
+          [
+            17,
+            19,
+            850.0
+          ],
+          [
+            18,
+            19,
+            1000.0
+          ],
+          [
+            18,
+            20,
+            900.0
+          ],
+          [
+            19,
+            21,
+            800.0
+          ],
+          [
+            19,
+            22,
+            1100.0
+          ],
+          [
+            20,
+            21,
+            900.0
+          ],
+          [
+            21,
+            24,
+            1200.0
+          ],
+          [
+            22,
+            23,
+            950.0
+          ],
+          [
+            22,
+            24,
+            650.0
+          ],
+          [
+            23,
+            24,
+            850.0
+          ]
+        ],
+        "nodes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      }
+    },
+    "total_slots": 320,
+    "traffic_trace_policy": "sha256_of_canonical_generated_request_sequence_v1",
+    "warmup_requests": 0
+  },
+  "fingerprint_sha256": "6b2e6d7f70a834b66315ae81243a8a54a1f119e0436a681637fe6112cd0412c4"
+}
